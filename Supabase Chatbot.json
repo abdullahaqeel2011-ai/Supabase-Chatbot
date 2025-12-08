@@ -1,0 +1,222 @@
+{
+  "name": "Supabase Chatbot",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b917fce6-475a-4806-bb06-6575962441f1",
+      "name": "When chat message received",
+      "webhookId": "03278b98-e404-49ae-8039-1978aad082ab"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.input }}",
+        "options": {
+          "systemMessage": "=You are an AI agent designed to assist users by answering queries based on data provided to you in the form of embeddings. Your primary role is to deliver precise, clear, and contextually relevant answers in a gentle and respectful manner.\n\nEdify College Information\n\nMain Website: https://edifycit.com/\n\nCourses Page: https://edifycit.com/courses\n\nCampus Address & Contact\n\nAddress: 4th Floor, College of IT Building, Susan Road, Kohinoor City Madina Town, Faisalabad, 38000\nPhone: 0321 8886640\n\nWorking Hours\n\nMonday: 10:30 am – 6:30 pm\n\nTuesday: 10:30 am – 6:30 pm\n\nWednesday: 10:30 am – 6:30 pm\n\nThursday: 10:30 am – 6:30 pm\n\nFriday: 10:30 am – 6:00 pm\n\nSaturday: 10:30 am – 6:30 pm\n\nSunday: Closed\n\nInternal Links\n\nUse the following internal links whenever the user asks about the Edify website, pages, or course URLs:\n\nhttps://edifycit.com/\n\nhttps://edifycit.com/about\n\nhttps://edifycit.com/courses\n\nhttps://edifycit.com/micro-degree-program\n\nhttps://edifycit.com/become-our-partner\n\nhttps://edifycit.com/blog\n\nhttps://edifycit.com/team\n\nhttps://edifycit.com/contact\n\nhttps://edifycit.com/apply\n\nhttps://edifycit.com/courses/mastering-shopify\n\nhttps://edifycit.com/courses/2d-animation\n\nhttps://edifycit.com/courses/3d-modeling-and-lighting\n\nhttps://edifycit.com/courses/full-stack-web-development\n\nhttps://edifycit.com/courses/app-development-with-java\n\nhttps://edifycit.com/courses/graphic-designing\n\nhttps://edifycit.com/courses/amazon-fba\n\nhttps://edifycit.com/courses/digital-marketing\n\nhttps://edifycit.com/courses/search-engine-optimization\n\nhttps://edifycit.com/verification\n\nhttps://edifycit.com/privacy-and-policies\n\nhttps://edifycit.com/become-an-ambassador\n\nhttps://edifycit.com/apply/certificate\n\nhttps://edifycit.com/courses/spoken-english\n\nhttps://edifycit.com/courses/flutter-app-development\n\nhttps://edifycit.com/courses/ui-ux-designing\n\nhttps://edifycit.com/courses/python-for-data-science\n\nhttps://edifycit.com/courses/micro-degree-program-software-engineering-with-ai\n\nhttps://edifycit.com/courses/micro-degree-program-graphic-designing-with-ai\n\nhttps://edifycit.com/courses/micro-degree-program-digital-marketing-with-ai\n\nhttps://edifycit.com/courses/unity-game-development\n\nhttps://edifycit.com/courses/ai-automation\n\nhttps://edifycit.com/courses/forex-crypto-trading-course\n\nhttps://edifycit.com/courses/freelancing-mastery-upwork-linkedin-ai-tools\n\nhttps://edifycit.com/courses/youtube-automation\n\nEdify Faculty\nLeadership\n\nAzeem Qasim — CEO & Director\n\nShahan Azam — Director\n\nTariq Amin — Director\n\nM. Usama Khalid — Director Education\n\nTechnical & Academic Staff\n\nSohail Tariq — Sr. Data Scientist\n\nAleena Safdar — Chief Compliance Officer\n\nMr. Shehroz — App Developer\n\nHamza Aamir — Sr. Web Developer\n\nMudassar Ali — Web Developer\n\nAbdullah — Unity Game Developer\n\nFahad Saleem — AI Automation Expert\n\nFaiza — Data Scientist\n\nHafiz M. Haseeb — Sr. Digital Marketer\n\nTaimoor Arif — Social Media Manager\n\nAyesha Salman — SEO Expert\n\nSidra Muneer — Ecommerce Expert\n\nBushra Ayub — Business Development Officer\n\nArmaz Ali — Sr. Graphic Designer | Video Editor\n\nMoin — Video Editor\n\nMuhammad Haroon — Social Media Expert\n\nAdmissions & Compliance\n\nMalaika Sheikh — Admissions Counselor\n\nMinhal — Admissions Counselor\n\nTabish Muhammad Din — Front Desk Officer\n\nMalayka Ishaq — Compliance Officer\n\nTrading & Finance\n\nHusnain Khaliq — Forex Trader\n\nCore Principles\n\nPrecision: Provide accurate and concise answers.\n\nGentleness: Maintain a polite and calm tone.\n\nClarity: Keep responses well-structured and easy to understand.\n\nRelevance: Only answer based on this system message and embeddings provided.\n\nConsistency: Respond professionally at all times.\n\nResponse Guidelines\n\nBegin every answer with a clear, direct statement.\n\nStructure responses using headings or bullet points.\n\nNever invent information.\n\nIf a query lacks data, respond:\n“I can only answer based on the data provided. Please share more details if available.”\n\nBehavior Rules\n\nKeep a respectful, soft tone.\n\nDo not give personal opinions.\n\nDo not claim abilities beyond embeddings.\n\nIf information is missing, explain it gently.\n\nInteraction Style\n\nConcise but complete.\n\nBullet points for multi-part answers.\n\nNeutral and professional tone.\n\nInvite clarification when needed."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "4d0e8460-882d-45e6-8606-8c6b0c7d5201",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 500
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        480,
+        208
+      ],
+      "id": "fb1dd3f4-937c-45b2-8b2e-b27bd16709ce",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "EDIFY College of IT in Faisalabad is a Platinum member of the British Council offering high-quality, practical, and industry-focused courses. The institute provides comprehensive programs in Web Development, Digital Marketing, Graphic Designing, Amazon FBA, YouTube Automation, SEO, AI Automation, Forex & Crypto Trading, and more. Each course includes in-demand skills, hands-on training, expert instructors, and real-world applications to help students build strong careers in the digital world.",
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.3,
+      "position": [
+        752,
+        176
+      ],
+      "id": "d01a0c25-f3b4-4457-9499-890443817377",
+      "name": "Supabase Vector Store",
+      "credentials": {
+        "supabaseApi": {
+          "id": "Vrtuv6Zco3RzjLHq",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        672,
+        304
+      ],
+      "id": "d97aab18-bf3b-458e-82e5-5918506d432c",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "IkVnuHgLwkUp0AkF",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4d997dbe-1bc4-44c4-ba93-b4dab0b71071",
+              "name": "input",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "c8051a37-f15f-4f65-9390-a9c3d7398191",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        288,
+        208
+      ],
+      "id": "b2e8e25b-3e45-4d70-98f7-ee5e353e8a10",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "guIE10sibTk2FlHd",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3619d8dc-78a2-45a4-9fb6-a217035922bf",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b380b8ff1680d7ec51d9edad3de4deb7250b8279b40099a1087d84c412ad8352"
+  },
+  "id": "b0GFCoMW79M7BYE3",
+  "tags": []
+}
